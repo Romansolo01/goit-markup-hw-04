@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
 }
 
@@ -149,6 +149,7 @@ body {
 
 .container-top {
   width: 1200px;
+  max-height: 600px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -156,8 +157,18 @@ body {
 }
 
 .top {
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(../images/top-img.jpg);
+  background-size: cover;
+  background-position: center;
   text-align: center;
-  background-color: var(--background-top-footer);
 }
 
 .top-title {
