@@ -120,14 +120,13 @@ body {
 .address-list {
   margin-left: auto;
   list-style: none;
-  display: flex;
+  display: inline-flex;
 }
 
-.address-link:not(:last-child) {
+.address-link-mail {
+  display: inline-flex;
   margin-right: 50px;
-}
-
-.address-link {
+  align-items: center;
   color: var(--secondary-text-color);
   font-style: normal;
   font-weight: 500;
@@ -137,10 +136,46 @@ body {
   text-decoration: none;
 }
 
-.address-link:hover,
-.address-link:active,
-.address-link:focus {
+.address-link-mail:hover,
+.address-link-mail:active,
+.address-link-mail:focus {
   color: var(--accent-color);
+}
+
+.address-link-mail::before {
+  margin-right: 10px;
+  content: " ";
+  width: 16px;
+  height: 12px;
+  background-image: url(../images/envelope.png);
+  background-size: contain;
+}
+
+.address-link-phone {
+  display: inline-flex;
+  align-items: center;
+  color: var(--secondary-text-color);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.142;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.address-link-phone:hover,
+.address-link-phone:active,
+.address-link-phone:focus {
+  color: var(--accent-color);
+}
+
+.address-link-phone::before {
+  margin-right: 10px;
+  content: " ";
+  width: 10px;
+  height: 16px;
+  background-image: url(../images/smartphone.png);
+  background-size: contain;
 }
 
 /* Шапка сайта */
@@ -250,6 +285,55 @@ body {
 
 .feature-list-item {
   max-width: 270px;
+  margin-right: 30px;
+}
+
+.feature-list:nth-child(4) {
+  margin-right: 0;
+}
+
+.feature-list-item:nth-child(1):before {
+  display: block;
+  margin-bottom: 30px;
+  height: 120px;
+  content: " ";
+  background-image: url(../images/antenna\ 1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--secondary-background-color);
+}
+
+.feature-list-item:nth-child(2):before {
+  display: block;
+  margin-bottom: 30px;
+  height: 120px;
+  content: " ";
+  background-image: url(../images/clock\ 1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--secondary-background-color);
+}
+
+.feature-list-item:nth-child(3):before {
+  display: block;
+  margin-bottom: 30px;
+  height: 120px;
+  content: " ";
+  background-image: url(../images/diagram\ 1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--secondary-background-color);
+}
+
+.feature-list-item:nth-child(4):before {
+  display: block;
+  margin-bottom: 30px;
+  height: 120px;
+  content: " ";
+  background-image: url(../images/astronaut\ 1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--secondary-background-color);
 }
 
 .feature-text {
