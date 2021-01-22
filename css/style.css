@@ -17,6 +17,8 @@
   --border-color: #eeeeee;
   --shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  --icons-color: #afb1b8;
+  --icons-footer-color: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -45,6 +47,11 @@ body {
   display: flex;
   align-items: center;
   height: 80px;
+}
+
+.logo {
+  width: 145px;
+  height: 31px;
 }
 
 .container-menu {
@@ -117,10 +124,16 @@ body {
   text-decoration: none;
 }
 
-.address-list {
+.address {
   margin-left: auto;
   list-style: none;
   display: inline-flex;
+}
+
+.address-list {
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
 }
 
 .address-link-mail {
@@ -128,6 +141,7 @@ body {
   margin-right: 50px;
   align-items: center;
   color: var(--secondary-text-color);
+  fill: var(--secondary-text-color);
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -140,21 +154,26 @@ body {
 .address-link-mail:active,
 .address-link-mail:focus {
   color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
-.address-link-mail::before {
+.envelope {
   margin-right: 10px;
-  content: " ";
+  content: "";
   width: 16px;
   height: 12px;
-  background-image: url(../images/envelope.png);
-  background-size: contain;
+}
+
+.envelope-item,
+.phone-item {
+  align-items: center;
 }
 
 .address-link-phone {
   display: inline-flex;
   align-items: center;
   color: var(--secondary-text-color);
+  fill: var(--secondary-text-color);
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -167,15 +186,14 @@ body {
 .address-link-phone:active,
 .address-link-phone:focus {
   color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
-.address-link-phone::before {
+.phone {
   margin-right: 10px;
-  content: " ";
+  content: "";
   width: 10px;
   height: 16px;
-  background-image: url(../images/smartphone.png);
-  background-size: contain;
 }
 
 /* Шапка сайта */
@@ -284,7 +302,8 @@ body {
 }
 
 .feature-list-item {
-  max-width: 270px;
+  width: 270px;
+  height: 251px;
   margin-right: 30px;
 }
 
@@ -292,47 +311,15 @@ body {
   margin-right: 0;
 }
 
-.feature-list-item:nth-child(1):before {
-  display: block;
-  margin-bottom: 30px;
+.feature-svg {
+  display: inline-flex;
+  width: 270px;
   height: 120px;
-  content: " ";
-  background-image: url(../images/antenna\ 1.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--secondary-background-color);
-}
-
-.feature-list-item:nth-child(2):before {
-  display: block;
+  padding-top: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 25px;
   margin-bottom: 30px;
-  height: 120px;
-  content: " ";
-  background-image: url(../images/clock\ 1.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--secondary-background-color);
-}
-
-.feature-list-item:nth-child(3):before {
-  display: block;
-  margin-bottom: 30px;
-  height: 120px;
-  content: " ";
-  background-image: url(../images/diagram\ 1.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--secondary-background-color);
-}
-
-.feature-list-item:nth-child(4):before {
-  display: block;
-  margin-bottom: 30px;
-  height: 120px;
-  content: " ";
-  background-image: url(../images/astronaut\ 1.png);
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: var(--secondary-background-color);
 }
 
@@ -442,6 +429,8 @@ body {
 }
 
 .team-item {
+  max-width: 270px;
+  max-height: 428px;
   background-color: var(--primary-background-color);
   border-radius: 0px 0px 4px 4px;
   box-shadow: var(--shadow);
@@ -449,6 +438,36 @@ body {
 
 .team-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.social-network {
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-flex;
+  align-items: center;
+  width: 206px;
+  height: 44px;
+}
+
+.social-network-button {
+  display: inline-flex;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--icons-color);
+}
+
+.social-network-button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-network-button:hover,
+.social-network-button:focus,
+.social-network-button:active {
+  background-color: var(--accent-color);
+  fill: var(--white-text-color);
 }
 
 .person-title {
@@ -465,7 +484,8 @@ body {
 
 .person-text {
   margin-top: 0;
-  padding-bottom: 30px;
+  margin-bottom: 0;
+  padding-bottom: 16px;
 
   color: var(--secondary-text-color);
   font-weight: normal;
@@ -481,6 +501,60 @@ body {
 
 /* Наша комманда */
 
+/* Постоянные клиенты */
+
+.container-clients {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.clients-title {
+  padding-bottom: 50px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.166;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.clients-box {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-flex;
+  vertical-align: bottom;
+}
+
+.clients-link {
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--icons-color);
+  border-radius: 4px;
+  border-color: var(--icons-color);
+  fill: var(--icons-color);
+}
+
+.clients-link:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-link:hover,
+.clients-link:focus,
+.clients-link:active {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+/* Постояные клиенты */
+
 /* Контакты */
 
 .footer {
@@ -493,10 +567,17 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
 }
 
-.footer-logo {
-  padding-top: 60px;
+.footer-address {
+  height: 252px;
+}
+
+.logo-white {
+  width: 145px;
+  height: 31px;
+  margin-top: 60px;
   margin-bottom: 20px;
 }
 
@@ -504,12 +585,13 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
-  padding-bottom: 60px;
   list-style: none;
 }
 
 .address-location,
 .address-location:visited {
+  display: block;
+  margin-bottom: 9px;
   color: var(--white-text-color);
   font-style: normal;
   font-weight: normal;
@@ -519,8 +601,10 @@ body {
   text-decoration: none;
 }
 
-.address-contacts,
-.address-contacts:visited {
+.address-footer-mail,
+.address-footer-mail:visited {
+  margin-bottom: 9px;
+  display: block;
   color: var(--footer-address-text-color);
   font-style: normal;
   font-weight: normal;
@@ -528,6 +612,56 @@ body {
   line-height: 1.714;
   letter-spacing: 0.03em;
   text-decoration: none;
+}
+
+.address-footer-phone,
+.address-footer-phone:visited {
+  display: block;
+  color: var(--footer-address-text-color);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.footer-network {
+  display: block;
+  margin-left: 70px;
+}
+
+.footer-title {
+  margin-top: 72px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.142;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--white-text-color);
+}
+
+.footer-network-button {
+  display: inline-flex;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--white-text-color);
+  background-color: var(--icons-footer-color);
+}
+
+.footer-network-button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-network-button:hover,
+.footer-network-button:focus,
+.footer-network-button:active {
+  background-color: var(--accent-color);
+  fill: var(--white-text-color);
 }
 
 /* Контакты */
@@ -618,7 +752,6 @@ body {
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
-  border: 1px solid var(--border-color);
 }
 
 .flex-elements:nth-child(3n) {
@@ -629,8 +762,17 @@ body {
   margin-bottom: 0;
 }
 
+.flex-elements:hover,
+.flex-elements:active,
+.flex-elements:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .portfolio-img {
   max-width: 100%;
+  border: none;
+  vertical-align: bottom;
 }
 
 .portfolio-title {
@@ -640,6 +782,8 @@ body {
   padding-top: 20px;
   padding-left: 24px;
 
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   text-align: left;
   font-weight: bold;
   font-size: 18px;
@@ -652,7 +796,11 @@ body {
   margin-bottom: 0;
   padding-bottom: 20px;
   padding-left: 24px;
+  padding-top: 4px;
 
+  border-right: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   text-align: left;
   color: var(--secondary-text-color);
   font-weight: normal;
